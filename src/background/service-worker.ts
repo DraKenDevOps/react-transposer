@@ -1,3 +1,3 @@
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('React Transposer installed');
+    console.log("React Transposer installed");
 });

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Transpose MVP",
+    "version": "1.0.0",
+    "permissions": ["storage", "tabs", "activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "src/background/service-worker.ts"
+    },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/content/content.ts"]
+        }
+    ]
+}

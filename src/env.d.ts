@@ -1,1 +1,1 @@
-declare module 'soundtouchjs';
+declare module "soundtouchjs";

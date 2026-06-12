@@ -1,33 +1,38 @@
+export interface Marker {
+    id: string;
+    time: number;
+    label?: string;
+}
+
 export interface PlayerSettings {
-  transpose: number;
-  pitch: number;
-  speed: number;
-  loopStart: number;
-  loopEnd: number;
-  enabled: boolean;
+    transpose: number;
+    pitch: number;
+    speed: number;
+    loopStart: number;
+    loopEnd: number;
+    enabled: boolean;
+    markers: Marker[];
 }
 
 export interface MediaState {
-  currentTime: number;
-  duration: number;
-  paused: boolean;
+    hasMedia: boolean;
+    currentTime: number;
+    duration: number;
+    paused: boolean;
 }
 
 export interface ExtensionMessage {
-  type: 'UPDATE_SETTINGS';
-  payload: Partial<PlayerSettings>;
+    type: "UPDATE_SETTINGS";
+    payload: Partial<PlayerSettings>;
 }
 
 export interface StateRequestMessage {
-  type: 'GET_STATE';
+    type: "GET_STATE";
 }
 
 export interface StateResponseMessage {
-  type: 'STATE_UPDATE';
-  payload: MediaState;
+    type: "STATE_UPDATE";
+    payload: MediaState;
 }
 
-export type Message =
-  | ExtensionMessage
-  | StateRequestMessage
-  | StateResponseMessage;
+export type Message = ExtensionMessage | StateRequestMessage | StateResponseMessage;

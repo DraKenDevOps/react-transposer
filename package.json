@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
+    "@crxjs/vite-plugin": "^2.5.0",
     "@rolldown/plugin-babel": "^0.2.3",
     "@types/babel__core": "^7.20.5",
     "@types/chrome": "^0.1.43",
@@ -26,6 +27,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "globals": "^17.6.0",
+    "prettier": "^3.8.4",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
   }

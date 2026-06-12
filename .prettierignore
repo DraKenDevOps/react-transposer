@@ -1,0 +1,8 @@
+build
+dist
+coverage
+vite.config*
+pnpm*.yaml
+index.html
+package*.json
+yarn*

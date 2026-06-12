@@ -1,22 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import { resolve } from 'path'
+import { defineConfig } from "vite"
+import { crx } from "@crxjs/vite-plugin"
+import react from "@vitejs/plugin-react"
+import tailwindcss from "@tailwindcss/vite"
+import manifest from "./manifest.json"
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  base: './',
-  server: { port: 3000 },
-  build: {
-    rollupOptions: {
-      input: {
-        popup: resolve(__dirname, 'index.html'),
-        'src/content/content': resolve(__dirname, 'src/content/content.ts'),
-        'src/background/service-worker': resolve(__dirname, 'src/background/service-worker.ts'),
-      },
-      output: {
-        entryFileNames: '[name].js',
-      },
-    },
-  },
+    plugins: [react(), tailwindcss(), crx({ manifest })],
+    base: "./",
+    server: { port: 3000 }
 })
